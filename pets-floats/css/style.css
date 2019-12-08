@@ -1,0 +1,157 @@
+html {
+    font-family: 'Nunito', sans-serif; /* Setting the overall page font to Nunito */
+}
+
+a, a:link, a:visited { /* Setting the styles for all links on the page including those that have been visited before. Remember, by default the browser specifies styles for this so we want to overwrite them unless we want to get the default */
+    color: #D6109A; /* Setting the link color */
+    text-decoration: none; /* Telling the browser to not underline links */
+}
+a:hover {
+    color: #0AD36E; /* Setting the hover color for links */
+    text-decoration: underline; /* Applying an underline for links. The browser does this by default but since we overwrote that above, we need to specify when we do want underlines. */
+}
+
+/* Styles for the main content block */
+    .main {
+        max-width: 1000px; /* Giving a max width to the page */
+        margin: auto; /* Telling the page to be centered */
+        background-color: #edf1f5; /* Applying a background color to the main content block*/
+        border: thin #333333 solid; /* Applying a border to the entire main content section */
+    }
+        .main img { /* I want all images in the .main class to have a solid gray border and padding */
+            border: 7px #cccccc solid;
+        }
+
+/* Primary navigation styles */
+    .topnav {
+        border-bottom: thin #333333 solid; /* Applying a thin, dark gray border just to the bottom of this section */
+    }
+        
+        .topnav ul {/* Telling the browser to ONLY use these styles in the .topnav class's UL (unordered list) */
+            margin: 0; /* If you don't set margin to 0 for Unordered and Ordered lists, the browser will add some by default */
+            padding: 10px 0; /* If you don't set padding to 0 for Unordered and Ordered lists, the browser will apply some by default. In this case, I want top and bottom padding to be 10px but left and right to be 0. I can write this as either padding:10px 0 10px 0px; (Remember, clockwise order so these numbers are top, right, bottom, left), or just 10px 0px */
+        }
+
+        .topnav ul li {
+            display: inline-block; /* Telling my nav to display horizontally */
+            text-align: center; /* Centering each nav text within the list item (li) space */
+            border-right: thin #ffffff solid; /* Putting a thin white border to the right of each list item (li) */
+        }
+
+        .topnav a {/* I want to address the link styles for the nav differently than other links on the page, so I'm referencing .topnav first here */
+            color: #ffffff; /* Since there are ONLY links in the nav, I don't have to specify color: #ffffff in the .top class itself */
+            text-decoration: none; /* The browser will underline links by default, so I'm saying not to here because I only want them on hover. */
+            background-color: #333333; /* I want the background color to change on hover, so I applied it here and then will put the color change in the :hover section below*/
+            padding: 10px 30px; /* This padding NOT ONLY provides spacing around the text, but it since it's applied to an <a> tag, it defines the clickable area for the links too! */
+        }
+
+            .topnav a:hover {
+                color: #333333; /* Changing the text color on hover to dark gray */
+                background-color: #00c6b9; /* Changing the background color to teal on hover */
+                transition: 0.3s; /* Adding in a hover fade transition for a little fanciness! */
+            }
+
+/* Pet Info styles */ 
+    .petinfo {
+        overflow: hidden; /* We have to apply this or our background color goes away using floats */
+    }
+
+
+/* Sidebar styles */
+    .sidebar {
+        float: left; /* Floating sidebar to the left so the content after would align to it's right */
+        width: 30%; /* Specifiying a width so the browser knows how much space to allocate for the content that will align to the right */
+    }
+
+    .profile {
+        border-bottom: thin #333333 solid; /* Giving a bottom border to the pup picture and name area */
+        padding: 30px; /* Putting a little space at the bottom of .profile */      
+    }
+
+    .image img {
+        width: 100%; /* Applying a width of 100% to an img tag in CSS makes the image "flexible" in that it will shrink to fill it's parent div */
+    }
+
+    .name {
+        text-align: center; /* Centering the pup name */
+    }
+
+    .stats {
+        padding: 30px; /* Applying a little padding to the Stats area */
+    }
+
+        .stats ul{
+            padding-left: 0px; /* Browsers will apply padding to ULs and OLs by default unless we overwrite. I wanted that removed here so the Stats list aligns with it's H2*/
+        }
+
+        .stats ul li {
+            list-style-type: none; /* I don't want bullets to show, so I apply this to the list items */
+            padding: 0 0 15px 0; /* I want a little spacing at the bottom of each list item */
+        }
+
+    .statbold {
+        font-weight: 900; /* Bolding the first part of the Stats list text just for the 2nd and 3rd lines */
+    }
+
+/* Details styles */   
+    .details {
+        float: left; 
+        padding: 2%; /* Applying a little padding to the Details area */
+        width: 65%;/* Setting the width of the Details area and factoring in padding of both it and Sidebar in relation to the total parent main content area width of 1000px */
+        border-left: thin #333333 solid; /* Giving a left border to the section to clearly divide it from Sidebar */
+    }
+
+        .bio h2 {
+            margin: 0 0 10px 0; /* Browsers will apply margin to H2s unless we specify none. In this case, I'm saying to set top margin to 0, left to 0, right to 0, but bottom to 10px */
+        }
+
+        .bioimage {
+            float: left; /* Floating image left so text will wrap */
+            margin: 0 15px 15px 0px; /* Applying right and bottom margin around the image so the text doesn't smash up against it */
+        }
+
+    .pictures {
+        text-align: center; /* Centering bottom pictures area */
+        margin-top: 40px; /* I want more spacing between the "Check out these floofs!" or pictures section and the paragraph above it */
+    }
+
+
+    .gallery {
+        text-align: center; /* Centering images within .gallery containers */
+        display: inline-block; /* Telling my gallery images to sit in a horizontal row */
+        width: 180px; /* Giving images a width so they look consistent and uniform */
+        padding-right: 25px; /* Applying a little padding to the right of each .gallery container */
+    }
+
+        .gallery img { /* Setting the width to images in the .gallery div to a width of 100%. This makes them shrink to fit the div space they're in. In this case, the images are naturally larger than the space I am providing for them in the design, so I'm scaling them down to fit the 180px width above */
+            width: 100%; 
+        }
+
+
+
+
+        /*  I've included some media queries below so you all can see on a very simple level what those look like and how they change the page */
+
+        @media screen and (max-width: 790px) { /* Telling the browser to change at a width of 790px or less, the picture with the .bioimage class applied to have a max-width of 90% and remove float so it doesn't try to float left at this level. This is where I noticed the h2 within .bio starting to wrap weird, which is why I applied the query here. */
+            .bioimage {
+                max-width: 90%;
+                float: none;
+            }
+        }
+        
+
+        @media screen and (max-width: 600px) { /* Telling the browser that at a width of 600px or less to remove the .sidebar and .details floats so the items would no longer be side by side, but rather stacked. Also telling them to have a width of 100% so they fill the mobile view nicely. */
+            .sidebar, .details {
+              float: none;
+              width: 100%;
+            }
+
+            .bio { /* Setting .bio class to have a little extra padding on mobile */
+                padding: 20px;
+            }
+
+            .gallery { /* Removing specified width for .gallery items and giving them a margin-bottom of 20px so they have a little space in a stacked, mobile view */
+                width: auto;
+                margin-bottom: 20px;
+            }
+          }
