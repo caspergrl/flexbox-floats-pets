@@ -108,6 +108,7 @@ a:hover {
         .bioimage {
             float: left; /* Floating image left so text will wrap */
             margin: 0 15px 15px 0px; /* Applying right and bottom margin around the image so the text doesn't smash up against it */
+            max-width: 260px; /* Applying max width so the image doesn't span too wide */
         }
 
     .pictures {
@@ -126,8 +127,6 @@ a:hover {
         .gallery img { /* Setting the width to images in the .gallery div to a width of 100%. This makes them shrink to fit the div space they're in. In this case, the images are naturally larger than the space I am providing for them in the design, so I'm scaling them down to fit the 180px width above */
             width: 100%; 
         }
-
-
 
 
         /*  I've included some media queries below so you all can see on a very simple level what those look like and how they change the page */
